@@ -1,14 +1,15 @@
-import { Application, NextFunction } from 'express';
+import { Application } from 'express';
 
 import IServer from '../interfaces/IServer';
 import IRouter from '../interfaces/IRouter';
+import MiddlewareFunction from '../types/MiddlewareFunction';
 
 class Server implements IServer {
   private app: Application;
-  private globalMiddleware: NextFunction[];
+  private globalMiddleware: MiddlewareFunction[];
   private router: IRouter;
 
-  constructor(globalMiddleware: NextFunction[], router: IRouter, app: Application) {
+  constructor(globalMiddleware: MiddlewareFunction[], router: IRouter, app: Application) {
     this.app = app;
     this.globalMiddleware = globalMiddleware;
     this.router = router;
