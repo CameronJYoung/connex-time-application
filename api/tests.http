@@ -1,0 +1,23 @@
+# Install rest client addon for vscode to test routes from this file
+
+### Home Path
+
+GET http://localhost:8080/
+Authorization: mysecrettoken
+
+### 404 Path
+
+GET http://localhost:8080/dsfgeghsdfghdfgdfagadrsg
+Authorization: mysecrettoken
+
+### without auth (any route)
+
+GET http://localhost:8080/
+
+### Time Path
+GET http://localhost:8080/time
+Authorization: mysecrettoken
+
+### Metrics Path
+GET http://localhost:8080/metrics
+Authorization: mysecrettoken
