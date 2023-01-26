@@ -1,8 +1,8 @@
 import { Application } from 'express';
 
+import MiddlewareFunction from '../types/MiddlewareFunction';
 import IServer from '../interfaces/IServer';
 import IRouter from '../interfaces/IRouter';
-import MiddlewareFunction from '../types/MiddlewareFunction';
 
 class Server implements IServer {
   private app: Application;
