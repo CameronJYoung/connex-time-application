@@ -1,5 +1,6 @@
 import { Application } from 'express';
 
+import appConfig from '../config/appConfig';
 import MiddlewareFunction from '../types/MiddlewareFunction';
 import IServer from '../interfaces/IServer';
 import IRouter from '../interfaces/IRouter';
@@ -28,7 +29,7 @@ class Server implements IServer {
   }
 
   public start(): void {
-    this.app.listen(8080, () => {
+    this.app.listen(appConfig.apiPort, () => {
       console.log('Server started');
     })
   }
