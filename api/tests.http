@@ -1,6 +1,6 @@
 # Install rest client addon for vscode to test routes from this file
 
-### Home Path
+### Home path
 
 GET http://localhost:8080/
 Authorization: mysecrettoken
@@ -14,10 +14,14 @@ Authorization: mysecrettoken
 
 GET http://localhost:8080/
 
-### Time Path
+### Time path
 GET http://localhost:8080/time
 Authorization: mysecrettoken
 
-### Metrics Path
+### Metrics path
 GET http://localhost:8080/metrics
+Authorization: mysecrettoken
+
+### Docker test
+GET http://localhost:49160/time
 Authorization: mysecrettoken
