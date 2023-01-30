@@ -6,5 +6,6 @@ esbuild.build({
   outfile: './dist/index.js',
   format: 'cjs',
   platform: 'node',
-  bundle: true
+  bundle: true,
+  minify: true
 }).catch(console.error);
