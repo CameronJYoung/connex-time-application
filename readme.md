@@ -13,3 +13,7 @@ This project should work without any additional setup or environment variables. 
 ## Environment variables
 
 Have a look in the config files for each project to see what environment variables you can set.
+
+## Prometheus
+
+I had to use an alternative package to "express-prometheus-middleware" as the documentation doesn't match the library and it is now read only on the git repository. Instead I have started using "express-prom-bundle", it also collects the same default metrics.
