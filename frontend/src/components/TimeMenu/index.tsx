@@ -12,11 +12,15 @@ function TimeMenu() {
 	return (
 		<Wrapper>
 			<h1>Times</h1>
-			<div className='time-data'>
-				<span>Most recent epoch: {data?.epoch}</span><br />
-				<span>Difference between client time and server time: {!isLoading && epochDifference}</span><br />
-				<span>{ isLoading && 'Loading...' }</span>
-			</div>
+			{
+				isLoading ?
+					<div className='time-data'><span>Loading...</span></div> : (
+					<div className='time-data'>
+						<span>Most recent epoch: {data?.epoch}</span>
+						<span>Difference between client time and server time: {!isLoading && epochDifference}</span>
+					</div>
+				)
+			}
 		</Wrapper>
 	);
 }

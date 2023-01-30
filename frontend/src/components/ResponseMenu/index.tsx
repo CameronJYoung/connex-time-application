@@ -10,11 +10,9 @@ function ResponseMenu() {
 	return (
 		<Wrapper>
 			<h1>Analytics</h1>
-			<FormattedMetrics>
-				{
-					data?.data
-				}
-			</FormattedMetrics>
+			{
+				isLoading ? <span className='load-indicator'>Loading...</span> : <FormattedMetrics>{data?.data}</FormattedMetrics>
+			}
 		</Wrapper>
 	)
 }

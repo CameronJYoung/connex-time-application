@@ -12,6 +12,9 @@ export const Wrapper = styled('section', {
 		padding: '1rem',
 		paddingBottom: '0.5rem',
 	},
+	'.load-indicator': {
+		paddingLeft: '1rem',
+	}
 });
 
 export const FormattedMetrics = styled('pre', {

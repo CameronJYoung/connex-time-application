@@ -12,5 +12,7 @@ export const Wrapper = styled('section', {
 	},
 	'.time-data': {
 		paddingLeft: '1rem',
+		display: 'flex',
+		flexDirection: 'column'
 	},
 });
