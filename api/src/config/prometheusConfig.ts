@@ -1,6 +1,11 @@
 const prometheusConfig = {
-  metricsPath: '/metrics',
-  collectDefaultMetrics: true
+  includeMethod: true,
+  includePath: true,
+  includeStatusCode: true,
+  includeUp: true,
+  promClient: {
+    collectDefaultMetrics: {}
+  }
 };
 
 export default prometheusConfig;
