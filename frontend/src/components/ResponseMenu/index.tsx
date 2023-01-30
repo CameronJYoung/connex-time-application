@@ -2,9 +2,10 @@ import React, {useEffect} from 'react';
 
 import {Wrapper, FormattedMetrics} from './ResponseMenu.styles';
 import useApiData from '../../hooks/useApiData';
+import config from '../../config';
 
 function ResponseMenu() {
-	const {data, isLoading} = useApiData('http://localhost:8080/metrics');
+	const {data, isLoading} = useApiData(`${config.apiUrl}/metrics`);
 
 	return (
 		<Wrapper>

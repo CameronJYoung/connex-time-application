@@ -1,5 +1,7 @@
 import {useEffect, useState} from 'react';
 
+import config from '../config';
+
 type UseApiDataFunction = (url: string) => {
 	isLoading: boolean;
 	data: Record<string, string> | undefined;
@@ -13,7 +15,7 @@ const useApiData: UseApiDataFunction = url => {
 		setIsLoading(true);
 		const response = await fetch(url, {
 			headers: {
-				Authorization: 'mysecrettoken',
+				Authorization: config.apiToken,
 			},
 		});
 

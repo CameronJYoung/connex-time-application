@@ -3,9 +3,10 @@ import React, {useEffect} from 'react';
 import {Wrapper} from './TimeMenu.styles';
 import useApiData from '../../hooks/useApiData';
 import useEpochDiff from '../../hooks/useEpochDiff';
+import config from '../../config';
 
 function TimeMenu() {
-	const {data, isLoading} = useApiData('http://localhost:8080/time');
+	const {data, isLoading} = useApiData(`${config.apiUrl}/time`);
 	const epochDifference = useEpochDiff(data);
 
 	return (
