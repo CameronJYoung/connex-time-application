@@ -1,19 +1,19 @@
-import React, { ReactNode } from 'react';
+import React, {type ReactNode} from 'react';
 
-import { ContainerWrapper } from './Container.styles';
+import {ContainerWrapper} from './Container.styles';
 
 type Props = {
-  children: ReactNode;
-}
+	children: ReactNode;
+};
 
 function Container({
-  children
+	children,
 }: Props) {
-  return (
-    <ContainerWrapper>
-      { children }
-    </ContainerWrapper>
-  )
+	return (
+		<ContainerWrapper>
+			{ children }
+		</ContainerWrapper>
+	);
 }
 
 export default Container;
