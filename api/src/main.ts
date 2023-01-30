@@ -11,8 +11,13 @@ import EpochController from './controllers/EpochController';
 import authenticateRequest from './middleware/authenticateRequest';
 
 async function main() {
-  // Init Prometheus middleware
+  // Init middleware
   const metricsMiddleware = promBundle(prometheusConfig);
+  const urlEncodedMiddleware = express.urlencoded({
+    extended: true
+  });
+  const jsonMiddlware = express.json();
+  const corsMiddleware = cors();
 
   // Init services
   const epochService = new EpochService();
@@ -24,7 +29,7 @@ async function main() {
   // Init server
   const expressApp = express();
   const router = new Router([epochController, homeController]);
-  const server = new Server([cors(), authenticateRequest, metricsMiddleware], router, expressApp);
+  const server = new Server([corsMiddleware, jsonMiddlware, urlEncodedMiddleware, authenticateRequest, metricsMiddleware], router, expressApp);
 
   server.start();
 }
