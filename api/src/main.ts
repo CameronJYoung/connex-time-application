@@ -1,4 +1,6 @@
-import prometheus from 'express-prometheus-middleware';
+import promBundle from 'express-prom-bundle';
+import cors from 'cors';
+import express from 'express';
 
 import Server from './utils/Server';
 import Router from './utils/Router';
@@ -9,6 +11,9 @@ import EpochController from './controllers/EpochController';
 import authenticateRequest from './middleware/authenticateRequest';
 
 async function main() {
+  // Init Prometheus middleware
+  const metricsMiddleware = promBundle(prometheusConfig);
+
   // Init services
   const epochService = new EpochService();
 
@@ -17,9 +22,9 @@ async function main() {
   const epochController = new EpochController(epochService);
 
   // Init server
-  const prometheusApp = prometheus(prometheusConfig);
+  const expressApp = express();
   const router = new Router([epochController, homeController]);
-  const server = new Server([authenticateRequest], router, prometheusApp);
+  const server = new Server([cors(), authenticateRequest, metricsMiddleware], router, expressApp);
 
   server.start();
 }

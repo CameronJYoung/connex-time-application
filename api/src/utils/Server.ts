@@ -20,7 +20,7 @@ class Server implements IServer {
 
   private addGlobalMiddleware(): void {
     if (this.globalMiddleware.length !== 0) {
-      this.app.use(this.globalMiddleware);
+      this.app.use('*', this.globalMiddleware);
     }
   }
 
