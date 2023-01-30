@@ -15,7 +15,7 @@ function TimeMenu({}: Props) {
   return (
     <Wrapper>
       <h1>Times</h1>
-      <div>
+      <div className='time-data'>
         <span>Most recent epoch: {data && data.epoch}</span><br />
         <span>Difference between client time and server time: {!isLoading && epochDifference}</span><br />
         <span>{ isLoading && 'Loading...' }</span>
