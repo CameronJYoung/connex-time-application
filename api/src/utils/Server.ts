@@ -31,7 +31,7 @@ class Server implements IServer {
   public start(): void {
     this.app.listen(appConfig.apiPort, () => {
       console.log('Server started');
-    })
+    });
   }
 }
 

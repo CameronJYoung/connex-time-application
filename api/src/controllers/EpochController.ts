@@ -5,7 +5,7 @@ import IEpochService from '../interfaces/IEpochService';
 import Route from '../types/Route';
 
 class EpochController implements IController {
-  public basePath: string = '/time';
+  public basePath = '/time';
   private epochService: IEpochService;
 
   constructor(epochService: IEpochService) {
@@ -17,8 +17,8 @@ class EpochController implements IController {
     
     res.status(200).json({
       epoch: epochSeconds
-    })
-  }
+    });
+  };
   
   public routes: Route[] = [
     {
